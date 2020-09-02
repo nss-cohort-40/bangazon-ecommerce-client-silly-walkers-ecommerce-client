@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import NavBar from "./nav/NavBar";
 import Login from './auth/Login';
+import Register from './'
 
 
 const App = () => {
