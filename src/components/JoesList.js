@@ -4,6 +4,7 @@ import NavBar from "./nav/NavBar";
 import Login from './auth/Login';
 import Register from './'
 
+import ApplicationViews from "./ApplicationViews";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Route render={(props) => <Login {...props} />} />
       <Route render={(props) => <Register {...props} />} />
 
+      <ApplicationViews />
     </React.Fragment>
   );
 };
