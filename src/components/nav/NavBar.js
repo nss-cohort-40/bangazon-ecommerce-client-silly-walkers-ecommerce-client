@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useSimpleAuth from "../hooks/ui/useSimpleAuth";
-import "bootstrap/dist/css/bootstrap.min.css";
+import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = (props) => {
   const { isAuthenticated, logout } = useSimpleAuth()
@@ -13,7 +13,7 @@ const NavBar = (props) => {
           <Link className="nav-link" to="/">Joes List</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary">  Category</Link>
+          <Link className="nav-link" to="/myitinerary">Categories</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/myitinerary">Sell</Link>
@@ -36,7 +36,7 @@ const NavBar = (props) => {
           </li> : 
           <>
             <li className="nav-item">
-              <Link className="nav-link" to="/login"></Link>
+              <Link className="nav-link" to="/login">Login</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/register">Register</Link>
