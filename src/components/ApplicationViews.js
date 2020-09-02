@@ -4,6 +4,7 @@ import { withRouter, Route } from "react-router-dom";
 // import Register from "./auth/Login"
 // import Login from "./auth/Login"
 import SellProductForm from "./sellProduct/sellProduct";
+import product from "./products/product"
 
 const ApplicationViews = () => {
   return (
@@ -14,6 +15,13 @@ const ApplicationViews = () => {
           return <SellProductForm {...props} />;
         }}
       />{" "}
+      
+      <Route
+        path="/products"
+        render={(props) => {
+          return <product {...props} />;
+        }}
+      />
     </React.Fragment>
   );
 };
