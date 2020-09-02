@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = (props) => {
   const { isAuthenticated, logout } = useSimpleAuth()
@@ -10,19 +9,19 @@ const NavBar = (props) => {
     <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
-          <Link className="nav-link" to="/">Joes List</Link>
+          <Link className="nav-link" to="/">Joe's List</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary">Categories</Link>
+          <Link className="nav-link" to="/categories">Categories</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary">Sell</Link>
+          <Link className="nav-link" to="/sell">Sell</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary"> My Products</Link>
+          <Link className="nav-link" to="/myproducts">My Products</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary">Settings</Link>
+          <Link className="nav-link" to="/settings">Settings</Link>
         </li>
         {isAuthenticated() ? 
           <li className="nav-item">
