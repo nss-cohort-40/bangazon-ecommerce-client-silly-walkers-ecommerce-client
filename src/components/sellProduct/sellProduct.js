@@ -103,7 +103,7 @@ const SellProductForm = (props) => {
             <label htmlFor="inputPrice"> Price </label>
             <input
               ref={price}
-              type="number"
+              type="float"
               id="price"
               className="form-control"
               placeholder="Price"
