@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
-import App from "./components/JoesList";
+import JoesList from "./components/JoesList";
 
 ReactDOM.render(
   <Router>
-    <App />
+    <JoesList />
   </Router>,
   document.getElementById("root")
 );
