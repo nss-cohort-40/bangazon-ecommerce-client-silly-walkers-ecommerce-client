@@ -22,7 +22,7 @@ const NavBar = (props) => {
           </Link>{" "}
         </li>{" "}
         <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary">
+          <Link className="nav-link" to="/sell">
             {" "}
             Sell{" "}
           </Link>{" "}
