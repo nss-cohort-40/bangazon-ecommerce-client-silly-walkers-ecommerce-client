@@ -2,7 +2,6 @@ import React, { useRef } from "react"
 import "./Login.css"
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
 
-
 const Login = props => {
     const username = useRef()
     const password = useRef()
