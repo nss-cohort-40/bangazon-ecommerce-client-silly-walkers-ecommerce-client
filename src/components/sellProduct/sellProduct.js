@@ -7,7 +7,6 @@ const SellProductForm = (props) => {
   const description = useRef();
   const quantity = useRef();
   const location = useRef();
-  const imagePath = useRef();
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -37,7 +36,7 @@ const SellProductForm = (props) => {
       .then((response) => response.json())
       .then((response) => {
         console.log("Added");
-        // props.history.push("/");
+        props.history.push("/");
       })
       .catch((error) => {
         console.log(error);
@@ -154,7 +153,7 @@ const SellProductForm = (props) => {
           </Col>
         </FormGroup>
         <Row>
-          <Col xs="1">
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
             <Button color="success" type="submit">
               Complete
             </Button>

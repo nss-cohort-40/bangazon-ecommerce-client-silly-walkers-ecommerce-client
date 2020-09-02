@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = (props) => {
   const { isAuthenticated, logout } = useSimpleAuth()
