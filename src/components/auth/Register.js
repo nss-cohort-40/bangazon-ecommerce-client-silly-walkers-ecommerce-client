@@ -6,11 +6,9 @@ import "./Login.css"
 
 const Register = props => {
     const email = useRef()
-    const userName = useRef()
+    const firstName = useRef()
     const lastName = useRef()
     const password = useRef()
-    const firstName = useRef()
-    const familyMembers = useRef()
     const verifyPassword = useRef()
     const { register } = useSimpleAuth()
 
@@ -18,10 +16,8 @@ const Register = props => {
         e.preventDefault()
 
         const newUser = {
-            "username": userName.current.value,
             "first_name": firstName.current.value,
             "last_name": lastName.current.value,
-            "family_members": familyMembers.current.value,
             "email": email.current.value,
             "password": password.current.value
         }
@@ -37,14 +33,7 @@ const Register = props => {
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Register to use Saturday in the Park</h1>
-                <fieldset>
-                    <label htmlFor="userName"> Username </label>
-                    <input ref={userName} type="text"
-                        name="userName"
-                        className="form-control"
-                        placeholder="Username"
-                        required autoFocus />
-                </fieldset>
+
                 <fieldset>
                     <label htmlFor="firstName"> First Name </label>
                     <input ref={firstName} type="text"
@@ -67,13 +56,6 @@ const Register = props => {
                         name="email"
                         className="form-control"
                         placeholder="Email address"
-                        required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputEmail"> Family members </label>
-                    <input ref={familyMembers} type="number"
-                        name="familyMembers"
-                        className="form-control"
                         required />
                 </fieldset>
                 <fieldset>
