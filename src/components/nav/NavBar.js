@@ -6,20 +6,13 @@ import './NavBar.css';
 
 const NavBar = (props) => {
   const { isAuthenticated, logout } = useSimpleAuth()
-  const [activeTab, setActiveTab] = useState('1');
-
-  const toggle = tab => {
-    if(activeTab !== tab) setActiveTab(tab);
-  }
-
-  toggle();
  
   return (
     <Nav className="navbar navbar-light p-0 shadow">
       <NavbarBrand className="logoText"><img className="navLogo m-2" src="https://lh3.googleusercontent.com/WS11omgCE4mXOyzC3Hz2NyOK-oFydBVPnjmpUeOjrRfBdZaFIeeUBlu4o3U_t9eY_74o1xIoi4udRsCRcHbG7lOn2ByqG5J5n4TPdl44kW-x7ngbZ9vVIhflRkZk9dD-1A1I4bp12ztiN9yp6yQx9VE1SD_VV2kcybNTMoWNiGPR-a2Uu0ZGJWyq6c4eK9dc1HHEklKv3CBOOTctktuyeRKSWyzKWjDm_YfBfbUpkHu7_LRw5yv_dwZugxrS3GhhXDu2d_JOg5UN-cFUqkaai7od4rjwk2hNy2E86RvRDQ6Rfvcrx3862p0xX1KdXqWpwewQoplOFGfQ3yzmhsn1jJwLCY_6IfseusCSIbFFTBHiWCGvh9lCK_0i6TUIAe6IQwVhgv-MoTYXzUGISUOtOXFXBzCfZTj91OrJWH_SGwOs153Zr90OmWIxzRGCmcDSTxEJs9wyw8TzKNFn3CLlkFPOybi3RabkIAfPEd3BUD8mhf9saAQDfLkKvS4LNxuSLYKRhhfkinPf6RnnQjVFEekb5dyjeVMneAlQYmnZTOZ_SMGWgEkxWNY_rwppp1RdU7zGiqxGM2ovQdnTMrGssfr-gkbnCHX1pE0Pslb4PJ6nucqpfoJOpHcID_y_ETS2BihCJ6gumna4WeTveyn0G1aZi--_63l9giZZxWhgBy3C6HW6Cmqe_ykrZ8kZ=s512-no?authuser=0" alt="money logo" />JoesList</NavbarBrand>
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
-            <NavLink className="nav-link" to="/list">Home</NavLink>
+            <NavLink className="nav-link" to="/list">Problem</NavLink>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="/categories">Categories</NavLink>
