@@ -16,16 +16,13 @@ const NavBar = (props) => {
           <Link className="nav-link" to="/myitinerary">Categories</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/sell">
-            {" "}
-            Sell{" "}
-          </Link>{" "}
-        </li>{" "}
-        <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary"> My Products</Link>
+          <Link className="nav-link" to="/sell">Sell</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/myitinerary">Settings</Link>
+          <Link className="nav-link" to="/myproducts"> My Products</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/myaccount">Settings</Link>
         </li>
         {isAuthenticated() ? 
           <li className="nav-item">
