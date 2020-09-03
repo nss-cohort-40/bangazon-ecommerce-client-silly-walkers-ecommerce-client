@@ -22,7 +22,7 @@ const ApplicationViews = () => {
           return <product {...props} />;
         }}
       />
-      />
+      
       <Route
         path="/login"
         render={(props) => <Login {...props} />} /> 

@@ -8,13 +8,24 @@ const product= (props) => {
     const addProduct = evt => {
         evt.preventDefault();
           setIsLoading(true);
-          ProductManager.post(product)
-            .then(() => props.history.push("/cart"));
-        }
-      };
-
-
-
+          fetch("http://localhost:8000/products", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              Authorization: `Token 786dafdea04d9cce0eace5a8ac81a0052895bed8`,
+            },
+            body: JSON.stringify(addProduct),
+        })
+        .then((response) => response.json())
+        .then((response) => {
+            console.log("Added to Cart");
+            props.history.push("/orders");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
 
 
 
@@ -46,7 +57,6 @@ const product= (props) => {
         </picture>
        
        
-
         <Link to={`/products/${props.product.id}`}>
           <button>Add to Cart</button>
         </Link>
@@ -58,7 +68,8 @@ const product= (props) => {
         </button>
       </div>
     </div>
-  );
-};
+    );
+  };
+
 
 export default product;

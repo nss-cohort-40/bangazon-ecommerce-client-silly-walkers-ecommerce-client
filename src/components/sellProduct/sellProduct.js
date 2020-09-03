@@ -29,7 +29,7 @@ const SellProductForm = (props) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Token 4dbadec1b30c4a12b5850f56b5136436d94b35e0`,
+        Authorization: `Token 786dafdea04d9cce0eace5a8ac81a0052895bed8`,
       },
       body: JSON.stringify(newProduct),
     })
