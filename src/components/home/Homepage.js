@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import HomepageProdCard from "./HomepageProdCard";
+import ProductCard from "../../helpers/ProductCard";
+import { Row, Col, Container, CardDeck } from "reactstrap";
 
 const HomepageProductList = (props) => {
   const [productInfo, setProductInfo] = useState([]);
@@ -17,10 +18,14 @@ const HomepageProductList = (props) => {
   }, []);
 
   return (
-    <div className="product-container-cards">
-      {productInfo.map((product) => (
-        <HomepageProdCard key={productInfo.id} product={product} {...props} />
-      ))}
+    <div className="row">
+      <Container>
+        <CardDeck>
+          {productInfo.map((product) => (
+            <ProductCard key={productInfo.id} product={product} {...props} />
+          ))}
+        </CardDeck>
+      </Container>
     </div>
   );
 };
