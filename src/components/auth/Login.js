@@ -1,5 +1,5 @@
-import React, { useRef } from "react"
-import "./Login.css"
+import React, { useRef } from "react";
+import "./Login.css";
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
 
 const Login = props => {
@@ -7,14 +7,8 @@ const Login = props => {
     const password = useRef()
     const { login } = useSimpleAuth()
 
-    // Simplistic handler for login submit
     const handleLogin = (e) => {
         e.preventDefault()
-
-        /*
-            For now, just store the username and password that
-            the customer enters into local storage.
-        */
         const credentials = {
             "username": username.current.value,
             "password": password.current.value
@@ -56,4 +50,4 @@ const Login = props => {
         </main>
     )
 }
-export default Login
+export default Login;
