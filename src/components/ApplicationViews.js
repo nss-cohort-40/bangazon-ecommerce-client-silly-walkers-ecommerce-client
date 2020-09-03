@@ -4,7 +4,7 @@ import { withRouter, Route } from "react-router-dom";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
 import SellProductForm from "./sellProduct/sellProduct";
-import Cart from "./cart/cart";
+import CartList from "./cart/cart";
 
 const ApplicationViews = () => {
   return (
@@ -17,7 +17,10 @@ const ApplicationViews = () => {
       />
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/register" render={(props) => <Register {...props} />} />
-      <Route path="/products/cart" render={(props) => <Cart {...props} />} />
+      <Route
+        path="/products/cart"
+        render={(props) => <CartList {...props} />}
+      />
     </React.Fragment>
   );
 };
