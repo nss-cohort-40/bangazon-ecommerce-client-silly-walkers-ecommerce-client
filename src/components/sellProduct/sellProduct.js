@@ -24,6 +24,8 @@ const SellProductForm = (props) => {
       product_type_id: 1,
     };
 
+    let token = localStorage.getItem("bangazon_token");
+
     fetch("http://localhost:8000/products", {
       method: "POST",
       headers: {
