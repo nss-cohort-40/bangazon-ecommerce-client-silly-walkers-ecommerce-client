@@ -9,7 +9,7 @@ const SellProductForm = (props) => {
   const location = useRef();
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
-  const [product_type, setproduct_type] = useState();
+  const [product_type, setproduct_type] = useState({ product_type_id: "" });
 
   const handleFieldChange = (evt) => {
     const stateToChange = { ...product_type };
@@ -30,27 +30,30 @@ const SellProductForm = (props) => {
       imagePath: { image },
       customer_id: 1,
     };
+
     console.log(newProduct);
 
     let token = localStorage.getItem("bangazon_token");
 
-    fetch("http://localhost:8000/products", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Token ${token}`,
-      },
-      body: JSON.stringify(newProduct),
-    })
-      .then((response) => response.json())
-      .then(() => {
-        console.log("Added");
-        props.history.push("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    !newProduct.product_type_id
+      ? alert("Please Select a Product Type")
+      : fetch("http://localhost:8000/products", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Token ${token}`,
+          },
+          body: JSON.stringify(newProduct),
+        })
+          .then((response) => response.json())
+          .then(() => {
+            console.log("Added");
+            props.history.push("/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
   };
 
   const uploadImage = async (e) => {
@@ -159,7 +162,7 @@ const SellProductForm = (props) => {
               name="select"
               id="productType"
             >
-              <option>Choose an Option</option>
+              <option value="">Choose an Option</option>
               <option value="1">Animals</option>
               <option value="2">Autos</option>
               <option value="3">Missed Connections</option>
