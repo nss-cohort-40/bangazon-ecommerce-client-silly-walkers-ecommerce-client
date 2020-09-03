@@ -20,22 +20,23 @@ const SellProductForm = (props) => {
       price: price.current.value,
       quantity: quantity.current.value,
       location: location.current.value,
-      product_type_id: parseInt(productType.current.value),
+      product_type_id: productType.current.value,
       imagePath: { image },
       customer_id: 1,
     };
+    console.log(newProduct);
 
     fetch("http://localhost:8000/products", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Token 4dbadec1b30c4a12b5850f56b5136436d94b35e0`,
+        Authorization: `Token 57f6e357ff8a56056bfa21b376abafd15245ea3e`,
       },
       body: JSON.stringify(newProduct),
     })
       .then((response) => response.json())
-      .then((response) => {
+      .then(() => {
         console.log("Added");
         props.history.push("/");
       })
@@ -150,12 +151,12 @@ const SellProductForm = (props) => {
               name="select"
               id="exampleSelectMulti"
             >
-              <option>Choose an Option</option>
+              <option >Choose an Option</option>
               <option value="1">Animals</option>
               <option value="2">Autos</option>
               <option value="3">Missed Connections</option>
               <option value="4">Electronics</option>
-              <option value="5">Matic Props</option>
+              <option value="5">Magic Props</option>
             </Input>
           </Col>
         </FormGroup>
