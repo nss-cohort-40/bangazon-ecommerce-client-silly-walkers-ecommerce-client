@@ -9,7 +9,7 @@ const NavBar = (props) => {
  
   return (
     <Nav className="navbar navbar-light p-0 shadow">
-      <NavbarBrand className="logoText"><img className="navLogo m-2" src="https://photos.google.com/share/AF1QipNDLeVbGQhEXBxRU2ZEhGKXWBcI-9K6E2bUUwMOhJkfbmG2adGLw3-gDSLYeltmwQ/photo/AF1QipMtotgNJehG3DiPZ1zuC23fAjKWje0KEBo7L1fE?key=dlFXZFQtRUZfMG91M3FucERZZ0VRRHVnUUtERl9n" alt="money logo" />JoesList</NavbarBrand>
+      <NavbarBrand className="logoText"><img className="navLogo m-2" src="https://tinyurl.com/moneyman222" alt="money logo" />JoesList</NavbarBrand>
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
             <NavLink className="nav-link" to="/list">Problem</NavLink>
