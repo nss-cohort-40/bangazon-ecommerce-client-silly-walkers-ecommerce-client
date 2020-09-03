@@ -4,7 +4,6 @@ import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
 import { Button } from 'reactstrap';
 import "./Login.css";
 
-
 const Register = props => {
     const username = useRef()
     const first_name = useRef()
@@ -39,7 +38,7 @@ const Register = props => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal text-center">Register to use Joe's List</h1>
+                <h1 className="h3 mb-3 font-weight-normal text-center">Register to use JoesList</h1>
                 <fieldset>
                     <label htmlFor="username">User Name:  </label>
                     <input ref={username} type="text"
