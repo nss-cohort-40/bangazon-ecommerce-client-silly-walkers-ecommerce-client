@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'; 
+import React from 'react'; 
 
 const ShowAccount = (props) => {
-    // const last_name = useRef();
+    // last_name = useRef();
     // const address = useRef();
     // const phone_number = useRef();
     // const order_history = useRef();
@@ -18,7 +18,7 @@ const ShowAccount = (props) => {
     return (
         <main style={{ textAlign: "center"}}>
             <h1> My Account</h1>
-            
+            <h1> </h1>
         </main>
     );
 };

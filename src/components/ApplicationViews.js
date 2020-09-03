@@ -5,7 +5,7 @@ import Login from "./auth/Login"
 import SellProductForm from "./sellProduct/sellProduct";
 import ShowAccount from "./MyAccount/MyAccount";
 
-const ApplicationViews = () => {
+const ApplicationViews = (props) => {
   return (
     <React.Fragment>
       <Route
@@ -21,7 +21,7 @@ const ApplicationViews = () => {
         path="/register"
         render={(props) => <Register {...props} />} /> 
         <Route
-        path="/myaccount"
+        exact path="/myaccount"
         render={(props) => <ShowAccount  {...props} />} />
     </React.Fragment>
     
