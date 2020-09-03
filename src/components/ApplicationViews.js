@@ -4,7 +4,7 @@ import { withRouter, Route } from "react-router-dom";
 import Register from "./auth/Register"
 import Login from "./auth/Login"
 import SellProductForm from "./sellProduct/sellProduct";
-import product from "./products/product"
+import product from "./productDetails/productDetails"
 
 const ApplicationViews = () => {
   return (
