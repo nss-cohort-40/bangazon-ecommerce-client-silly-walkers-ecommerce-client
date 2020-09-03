@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Form, Button, FormGroup, Col, Row } from "reactstrap";
+import { Form, Button, FormGroup, Col, Row, Input } from "reactstrap";
 
 const SellProductForm = (props) => {
   const title = useRef();
@@ -7,6 +7,7 @@ const SellProductForm = (props) => {
   const description = useRef();
   const quantity = useRef();
   const location = useRef();
+  const productType = useRef();
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -19,9 +20,9 @@ const SellProductForm = (props) => {
       price: price.current.value,
       quantity: quantity.current.value,
       location: location.current.value,
+      product_type_id: parseInt(productType.current.value),
       imagePath: { image },
       customer_id: 1,
-      product_type_id: 1,
     };
 
     fetch("http://localhost:8000/products", {
@@ -138,6 +139,24 @@ const SellProductForm = (props) => {
               // defaultValue="Nashville, TN"
               required
             />
+          </Col>
+        </FormGroup>
+        <FormGroup>
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
+            <label htmlFor="inputProductType"> Product Type </label>
+            <Input
+              ref={productType}
+              type="select"
+              name="select"
+              id="exampleSelectMulti"
+            >
+              <option>Choose an Option</option>
+              <option value="1">Animals</option>
+              <option value="2">Autos</option>
+              <option value="3">Missed Connections</option>
+              <option value="4">Electronics</option>
+              <option value="5">Matic Props</option>
+            </Input>
           </Col>
         </FormGroup>
         <FormGroup>
