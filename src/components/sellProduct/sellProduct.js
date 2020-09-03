@@ -26,12 +26,14 @@ const SellProductForm = (props) => {
     };
     console.log(newProduct);
 
+    let token = localStorage.getItem("bangazon_token");
+
     fetch("http://localhost:8000/products", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Token 57f6e357ff8a56056bfa21b376abafd15245ea3e`,
+        Authorization: `Token ${token}`,
       },
       body: JSON.stringify(newProduct),
     })

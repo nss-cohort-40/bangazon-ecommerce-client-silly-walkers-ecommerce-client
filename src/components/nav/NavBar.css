@@ -1,0 +1,39 @@
+.navLogo{
+    width: 40px;
+    height: 40px;
+}
+.cart{
+    width: 40px;
+    height: 40px;
+}
+.cart:hover {
+    border: solid 2px transparent; 
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: rgb(50, 111, 157) !important;
+    background-color: white !important;
+    border-bottom: solid 4px rgb(50, 111, 157);
+
+    font-weight: bold;   
+}
+
+.nav-pills .nav-link {
+    border-radius: 0 !important;
+    color: rgb(91, 87, 87);
+    font-weight: bold;
+}
+
+.buttonText {
+    font-weight: bold !important;
+    margin: 2px;
+}
+
+.logoText {
+    font-size: 1.8rem !important;
+}
+
+.nav-link:hover {
+    text-shadow:  rgb(50, 111, 157) 1px 0 20px;
+}
+
