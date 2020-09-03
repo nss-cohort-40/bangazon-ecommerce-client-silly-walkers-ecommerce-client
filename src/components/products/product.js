@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./product.css";
 
 const product= (props) => {
-    const [isLoading, setIsLoading] = useState(false);
+   const [isLoading, setIsLoading] = useState(false); 
 
     const addProduct = evt => {
         evt.preventDefault();
@@ -20,7 +20,7 @@ const product= (props) => {
         .then((response) => response.json())
         .then((response) => {
             console.log("Added to Cart");
-            props.history.push("/orders");
+            props.history.push("/products/cart");
         })
         .catch((error) => {
           console.log(error);
@@ -56,16 +56,9 @@ const product= (props) => {
           <img src={props.product.photo} alt="Item for Sale" />
         </picture>
        
-       
         <Link to={`/products/${props.product.id}`}>
-          <button>Add to Cart</button>
+          <button type="button" disabled={isLoading} >Add to Cart</button>
         </Link>
-        <button
-          type="button"
-          onClick={() => props.history.push(`/products/${props.product.id}/edit`)}
-        >
-          Edit
-        </button>
       </div>
     </div>
     );
