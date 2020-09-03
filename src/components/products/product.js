@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./product.css";
 
 const product= (props) => {
-   const [isLoading, setIsLoading] = useState(false); 
+   const [isLoading, setIsLoading] = useState(true); 
 
     const addProduct = evt => {
         evt.preventDefault();
