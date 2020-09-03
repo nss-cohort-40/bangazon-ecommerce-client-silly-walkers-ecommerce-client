@@ -4,7 +4,6 @@ import { Button, Col, Row } from "reactstrap";
 let token = localStorage.getItem("bangazon_token");
 
 const CartList = (props) => {
-  console.log(token);
   fetch("http://localhost:8000/products/cart", {
     headers: {
       Authorization: `Token ${token}`,
