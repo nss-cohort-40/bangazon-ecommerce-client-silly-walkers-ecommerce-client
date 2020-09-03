@@ -20,7 +20,7 @@ const ApplicationViews = (props) => {
       <Route
         path="/register"
         render={(props) => <Register {...props} />} /> 
-        <Route
+      <Route
         exact path="/myaccount"
         render={(props) => <ShowAccount  {...props} />} />
     </React.Fragment>
