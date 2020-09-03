@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { withRouter } from "react-router-dom";
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
+import { Button } from 'reactstrap';
 import "./Login.css";
 
 
@@ -38,7 +39,7 @@ const Register = props => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Register to use Joe's List</h1>
+                <h1 className="h3 mb-3 font-weight-normal text-center">Register to use Joe's List</h1>
                 <fieldset>
                     <label htmlFor="username">User Name:  </label>
                     <input ref={username} type="text"
@@ -104,9 +105,11 @@ const Register = props => {
                         required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit">
-                        Sign in
-                    </button>
+                    <div className="d-flex flex-wrap justify-content-center">
+                        <Button color="success" type="submit" className="m-4">
+                            Login
+                        </Button>
+                    </div>
                 </fieldset>
             </form>
         </main>
