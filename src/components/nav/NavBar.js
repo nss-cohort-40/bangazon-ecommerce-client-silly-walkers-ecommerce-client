@@ -49,7 +49,7 @@ const NavBar = (props) => {
         )}
       {isAuthenticated() ? 
         <li>
-          <img className="cart p-1 mr-3" src="https://tinyurl.com/yyw8ctdh" alt="shopping cart"/>
+          <img className="cart p-1 mr-1" src="https://tinyurl.com/yyw8ctdh" alt="shopping cart"/>
         </li> : ('')
       }
       </ul>
