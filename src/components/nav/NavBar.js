@@ -31,7 +31,7 @@ const NavBar = (props) => {
           <NavLink className="nav-link" to="/myproducts">My Products</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/settings">Settings</NavLink>
+          <NavLink className="nav-link" to="/myaccount">My Account</NavLink>
         </li>
         {isAuthenticated() ? 
           <li className="nav-item">
