@@ -5,7 +5,7 @@ import HomepageProductList from "./home/Homepage";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
 import SellProductForm from "./sellProduct/sellProduct";
-import product from "./productDetails/productDetails"
+import ProductDetail from "./productDetails/productDetails";
 
 const ApplicationViews = () => {
   return (
@@ -23,11 +23,23 @@ const ApplicationViews = () => {
           return <SellProductForm {...props} />;
         }}
       />{" "}
-      
       <Route
+        exact
         path="/products"
         render={(props) => {
-          return <product {...props} />;
+          return <ProductDetail {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/products/:productId(\d+)"
+        render={(props) => {
+          return (
+            <ProductDetail
+              productId={parseInt(props.match.params.productId)}
+              {...props}
+            />
+          );
         }}
       />
       <Route path="/login" render={(props) => <Login {...props} />} />
