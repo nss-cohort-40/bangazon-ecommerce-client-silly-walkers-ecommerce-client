@@ -7,9 +7,15 @@ const SellProductForm = (props) => {
   const description = useRef();
   const quantity = useRef();
   const location = useRef();
-  const productType = useRef();
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
+  const [product_type, setproduct_type] = useState();
+
+  const handleFieldChange = (evt) => {
+    const stateToChange = { ...product_type };
+    stateToChange[evt.target.id] = evt.target.value;
+    setproduct_type(stateToChange);
+  };
 
   const addToProducts = (e) => {
     e.preventDefault();
@@ -20,7 +26,7 @@ const SellProductForm = (props) => {
       price: price.current.value,
       quantity: quantity.current.value,
       location: location.current.value,
-      product_type_id: productType.current.value,
+      product_type_id: product_type.productType,
       imagePath: { image },
       customer_id: 1,
     };
@@ -148,12 +154,12 @@ const SellProductForm = (props) => {
           <Col sm="12" md={{ size: 6, offset: 3 }}>
             <label htmlFor="inputProductType"> Product Type </label>
             <Input
-              ref={productType}
+              onChange={handleFieldChange}
               type="select"
               name="select"
-              id="exampleSelectMulti"
+              id="productType"
             >
-              <option >Choose an Option</option>
+              <option>Choose an Option</option>
               <option value="1">Animals</option>
               <option value="2">Autos</option>
               <option value="3">Missed Connections</option>
