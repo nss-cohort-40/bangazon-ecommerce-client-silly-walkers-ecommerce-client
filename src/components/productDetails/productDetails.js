@@ -8,10 +8,11 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+import "./productDetails.css";
 
 
 const ProductDetails = (props) => {
-  const [productDetails, setProductDetails] = useState([]);
+  const [productDetails, setProductDetails] = useState({product_type:{}});
   // console.log('This is my thing', props)
   const pid = props.productId
   
@@ -37,16 +38,24 @@ const ProductDetails = (props) => {
   }, []);
   return (
     <>
-      <h1>Product Detail Page</h1>
-      <h1>{productDetails.title}</h1>
-      <h2></h2>
-     
-    "quantity": 1,
-    "price": "15.99",
-    "description
-
-
-
+     <Card className="style-card card">
+      <CardImg
+        className="card-img card-img-top"
+        top
+        width="100%"
+        src={productDetails.imagePath}
+        alt="Card image cap"
+      />
+      <CardBody>
+        <CardTitle>{productDetails.title}</CardTitle>
+        <CardSubtitle> Price:${productDetails.price}</CardSubtitle>
+        <CardText> Location: {productDetails.location}</CardText>
+        <CardText> Quantity: {productDetails.quantity}</CardText>
+        <CardText> Type: {productDetails.product_type.name}</CardText>
+        <CardText> Description: {productDetails.description}</CardText>
+        <Button color="success">Add to Cart</Button>{" "}
+      </CardBody>
+    </Card>
     </>
   );
 };
