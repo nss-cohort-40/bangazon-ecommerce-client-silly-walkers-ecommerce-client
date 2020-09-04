@@ -48,11 +48,11 @@ const ProductDetails = (props) => {
       />
       <CardBody>
         <CardTitle>{productDetails.title}</CardTitle>
-        <CardSubtitle> Price:${productDetails.price}</CardSubtitle>
-        <CardText> Location: {productDetails.location}</CardText>
-        <CardText> Quantity: {productDetails.quantity}</CardText>
-        <CardText> Type: {productDetails.product_type.name}</CardText>
-        <CardText> Description: {productDetails.description}</CardText>
+        <CardSubtitle>Price: ${productDetails.price}</CardSubtitle>
+        <CardText>Location: {productDetails.location}</CardText>
+        <CardText>Quantity: {productDetails.quantity}</CardText>
+        <CardText>Type: {productDetails.product_type.name}</CardText>
+        <CardText>Description: {productDetails.description}</CardText>
         <Button color="success">Add to Cart</Button>{" "}
       </CardBody>
     </Card>
