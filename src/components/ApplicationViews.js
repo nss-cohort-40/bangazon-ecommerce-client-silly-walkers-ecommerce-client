@@ -5,7 +5,7 @@ import HomepageProductList from "./home/Homepage";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
 import SellProductForm from "./sellProduct/sellProduct";
-import CartList from "./cart/cart";
+import Cart from "./cart/cart";
 
 const ApplicationViews = () => {
   return (
@@ -16,7 +16,6 @@ const ApplicationViews = () => {
           return <HomepageProductList {...props} />;
         }}
       />
-      ;
       <Route
         path="/sell"
         render={(props) => {
@@ -25,10 +24,7 @@ const ApplicationViews = () => {
       />
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/register" render={(props) => <Register {...props} />} />
-      <Route
-        path="/products/cart"
-        render={(props) => <CartList {...props} />}
-      />
+      <Route path="/products/cart" render={(props) => <Cart {...props} />} />
     </React.Fragment>
   );
 };
