@@ -1,10 +1,8 @@
-import { Route, withRouter  } from "react-router-dom",
+import { Route, withRouter  } from "react-router-dom";
 import React from "react";
 import Register from "./auth/Register"
 import Login from "./auth/Login"
 import HomepageProductList from "./home/Homepage";
-import Register from "./auth/Register";
-import Login from "./auth/Login";
 import SellProductForm from "./sellProduct/sellProduct";
 import ShowAccount from "./MyAccount/MyAccount";
 

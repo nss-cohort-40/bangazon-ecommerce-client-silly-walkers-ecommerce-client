@@ -18,7 +18,6 @@ const HomepageProductList = (props) => {
   }, []);
 
   return (
-    <div className="row">
       <Container>
         <CardDeck>
           {productInfo.map((product) => (
@@ -26,7 +25,6 @@ const HomepageProductList = (props) => {
           ))}
         </CardDeck>
       </Container>
-    </div>
   );
 };
 

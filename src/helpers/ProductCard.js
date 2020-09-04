@@ -1,33 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
   Button,
 } from "reactstrap";
-import "./ProductCard.css";
+import './ProductCard.css';
 
 const ProductCard = (props) => {
   return (
-    <Card className="style-card card">
-      <CardImg
-        className="card-img card-img-top"
-        top
-        width="100%"
-        src={props.product.imagePath}
-        alt="Card image cap"
-      />
-      <CardBody>
-        <CardTitle>{props.product.title}</CardTitle>
-        <CardSubtitle>${props.product.price}</CardSubtitle>
-        <CardText>{props.product.description}</CardText>
-        <Button color="success">Detail</Button>{" "}
-      </CardBody>
-    </Card>
+    <div className="card">
+        <img
+          className="card-img card-img-top"
+          top
+          width="100%"
+          src={props.product.imagePath}
+          alt={props.product.title}
+        />
+      <div className="card-body">
+        <div className="card-title">{props.product.title}</div>
+        <div className="card-text">${props.product.price}</div>
+        <div className="card-text">{props.product.description}</div>
+        <div className="text-center m-4">
+        <Button color="success">Detail</Button>
+        </div>
+      </div>
+    </div>
   );
 };
 export default ProductCard;
