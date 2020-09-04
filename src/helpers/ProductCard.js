@@ -25,7 +25,10 @@ const ProductCard = (props) => {
         <CardTitle>{props.product.title}</CardTitle>
         <CardSubtitle>${props.product.price}</CardSubtitle>
         <CardText>{props.product.description}</CardText>
-        <Button color="success">Detail</Button>{" "}
+       <Button onClick={() =>
+            props.history.push(`/products/${props.product.id}`)
+          }
+       color="success">Detail</Button>{" "}
       </CardBody>
     </Card>
   );
