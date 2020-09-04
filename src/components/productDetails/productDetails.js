@@ -40,7 +40,7 @@ const ProductDetails = (props) => {
     <>
      <Card className="style-card card">
       <CardImg
-        className="card-img card-img-top"
+        className="detail-card-img card-img-top"
         top
         width="100%"
         src={productDetails.imagePath}
