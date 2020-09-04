@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "/Users/roxannenasraty/workspace_40/bangazon-ecommerce-api-silly-walkers-ecommerce-api/db.sqlite3",
+            "driver": "SQLite",
+            "name": "connect",
+            "previewLimit": 50
+        }
+    ]
+}
