@@ -1,28 +1,36 @@
 import React from "react";
 import {
   Button,
+  Card,
+  CardBody,
+  CardImg,
+  CardTitle,
+  CardSubtitle,
+  CardText
+
 } from "reactstrap";
 import './ProductCard.css';
 
 const ProductCard = (props) => {
   return (
-    <div className="card">
-        <img
-          className="card-img card-img-top"
-          top
-          width="100%"
-          src={props.product.imagePath}
-          alt={props.product.title}
-        />
-      <div className="card-body">
-        <div className="card-title">{props.product.title}</div>
-        <div className="card-text">${props.product.price}</div>
-        <div className="card-text">{props.product.description}</div>
-        <div className="text-center m-4">
-        <Button color="success">Detail</Button>
-        </div>
-      </div>
-    </div>
+    <Card className="style-card card">
+      <CardImg
+        className="card-img card-img-top"
+        top
+        width="100%"
+        src={props.product.imagePath}
+        alt="Card image cap"
+      />
+      <CardBody>
+        <CardTitle>{props.product.title}</CardTitle>
+        <CardSubtitle>${props.product.price}</CardSubtitle>
+        <CardText>{props.product.description}</CardText>
+       <Button onClick={() =>
+            props.history.push(`/products/${props.product.id}`)
+          }
+       color="success">Detail</Button>{" "}
+      </CardBody>
+    </Card>
   );
 };
 export default ProductCard;

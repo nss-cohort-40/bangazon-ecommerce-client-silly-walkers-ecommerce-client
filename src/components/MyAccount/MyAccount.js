@@ -22,8 +22,7 @@ const Account = (props) => {
         })
     }
 
-    const getPaymentTypes = () => {
-        console.log(props)
+    const getPaymentTypes = (profile_id) => {
         fetch("http://localhost:8000/paymenttypes", {
             "method": "GET",
             "headers": {

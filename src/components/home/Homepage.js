@@ -21,7 +21,7 @@ const HomepageProductList = (props) => {
       <Container>
         <CardDeck>
           {productInfo.map((product) => (
-            <ProductCard key={productInfo.id} product={product} {...props} />
+            <ProductCard key={product.id} product={product} {...props} />
           ))}
         </CardDeck>
       </Container>

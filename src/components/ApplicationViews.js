@@ -5,6 +5,7 @@ import Login from "./auth/Login"
 import HomepageProductList from "./home/Homepage";
 import SellProductForm from "./sellProduct/sellProduct";
 import ShowAccount from "./MyAccount/MyAccount";
+import ProductDetail from "./productDetails/productDetails";
 
 const ApplicationViews = (props) => {
   return (
@@ -20,6 +21,25 @@ const ApplicationViews = (props) => {
         path="/sell"
         render={(props) => {
           return <SellProductForm {...props} />;
+        }}
+      />{" "}
+      <Route
+        exact
+        path="/products"
+        render={(props) => {
+          return <ProductDetail {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/products/:productId(\d+)"
+        render={(props) => {
+          return (
+            <ProductDetail
+              productId={parseInt(props.match.params.productId)}
+              {...props}
+            />
+          );
         }}
       />
       <Route
