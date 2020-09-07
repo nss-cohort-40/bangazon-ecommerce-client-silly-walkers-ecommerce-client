@@ -21,11 +21,11 @@ const Cart = (props) => {
       });
   };
 
-  const deleteOrder = (id) => {
-    fetch(`http://localhost:8000/orders/${id}`, {
-      method: "DELETE",
-    }).then((result) => result.json());
-  };
+  //   const deleteOrder = (id) => {
+  //     fetch(`http://localhost:8000/orders/${id}`, {
+  //       method: "DELETE",
+  //     }).then((result) => result.json());
+  //   };
 
   useEffect(() => {
     getCartList();
@@ -40,9 +40,7 @@ const Cart = (props) => {
           ))}
         </CardDeck>
       </Container>
-      <Button color="danger" onClick={deleteOrder(orderId)}>
-        Cancel Order
-      </Button>
+      <Button color="danger">Cancel Order</Button>
     </div>
   );
 };

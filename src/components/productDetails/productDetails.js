@@ -31,13 +31,14 @@ const ProductDetails = (props) => {
   };
 
   const addProductToCart = (product_id) => {
-    fetch(`http://localhost:8000/orders/${product_id}`, {
+    const product = { product_id: `${product_id}` };
+    fetch(`http://localhost:8000/orders`, {
       method: "POST",
       headers: {
         Authorization: `Token ${localStorage.getItem("bangazon_token")}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(product),
     }).then((data) => data.json());
   };
 
@@ -61,7 +62,7 @@ const ProductDetails = (props) => {
           <CardText>Quantity: {productDetails.quantity}</CardText>
           <CardText>Type: {productDetails.product_type.name}</CardText>
           <CardText>Description: {productDetails.description}</CardText>
-          <Button color="success" onClick={addProductToCart(pid)}>
+          <Button color="success" onClick={() => addProductToCart(pid)}>
             Add to Cart
           </Button>{" "}
         </CardBody>
