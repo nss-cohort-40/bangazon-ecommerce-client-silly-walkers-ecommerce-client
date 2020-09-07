@@ -62,7 +62,13 @@ const ProductDetails = (props) => {
           <CardText>Quantity: {productDetails.quantity}</CardText>
           <CardText>Type: {productDetails.product_type.name}</CardText>
           <CardText>Description: {productDetails.description}</CardText>
-          <Button color="success" onClick={() => addProductToCart(pid)}>
+          <Button
+            color="success"
+            onClick={() => {
+              addProductToCart(pid);
+              props.history.push(`/products/cart`);
+            }}
+          >
             Add to Cart
           </Button>{" "}
         </CardBody>
