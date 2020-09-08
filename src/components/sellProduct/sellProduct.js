@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Form, Button, FormGroup, Col, Row } from "reactstrap";
+import { Form, Button, FormGroup, Col, Row, Input } from "reactstrap";
 
 const SellProductForm = (props) => {
   const title = useRef();
@@ -9,6 +9,13 @@ const SellProductForm = (props) => {
   const location = useRef();
   const [image, setImage] = useState();
   const [loading, setLoading] = useState(false);
+  const [product_type, setproduct_type] = useState({ product_type_id: "" });
+
+  const handleFieldChange = (evt) => {
+    const stateToChange = { ...product_type };
+    stateToChange[evt.target.id] = evt.target.value;
+    setproduct_type(stateToChange);
+  };
 
   const addToProducts = (e) => {
     e.preventDefault();
@@ -19,30 +26,34 @@ const SellProductForm = (props) => {
       price: price.current.value,
       quantity: quantity.current.value,
       location: location.current.value,
+      product_type_id: product_type.productType,
       imagePath: { image },
       customer_id: 1,
-      product_type_id: 1,
     };
+
+    console.log(newProduct);
 
     let token = localStorage.getItem("bangazon_token");
 
-    fetch("http://localhost:8000/products", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Token 786dafdea04d9cce0eace5a8ac81a0052895bed8`,
-      },
-      body: JSON.stringify(newProduct),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        console.log("Added");
-        props.history.push("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    !newProduct.product_type_id
+      ? alert("Please Select a Product Type")
+      : fetch("http://localhost:8000/products", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Token ${token}`,
+          },
+          body: JSON.stringify(newProduct),
+        })
+          .then((response) => response.json())
+          .then(() => {
+            console.log("Added");
+            props.history.push("/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
   };
 
   const uploadImage = async (e) => {
@@ -140,6 +151,24 @@ const SellProductForm = (props) => {
               // defaultValue="Nashville, TN"
               required
             />
+          </Col>
+        </FormGroup>
+        <FormGroup>
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
+            <label htmlFor="inputProductType"> Product Type </label>
+            <Input
+              onChange={handleFieldChange}
+              type="select"
+              name="select"
+              id="productType"
+            >
+              <option value="">Choose an Option</option>
+              <option value="1">Animals</option>
+              <option value="2">Autos</option>
+              <option value="3">Missed Connections</option>
+              <option value="4">Electronics</option>
+              <option value="5">Magic Props</option>
+            </Input>
           </Col>
         </FormGroup>
         <FormGroup>
