@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../../helpers/ProductCard";
-import { Row, Col, Container, CardDeck } from "reactstrap";
+import { Container, CardDeck } from "reactstrap";
 
 const HomepageProductList = (props) => {
   const [productInfo, setProductInfo] = useState([]);

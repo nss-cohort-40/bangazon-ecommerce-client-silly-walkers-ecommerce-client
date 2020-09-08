@@ -7,7 +7,6 @@ import {
   CardTitle,
   CardSubtitle,
   CardText
-
 } from "reactstrap";
 import './ProductCard.css';
 
