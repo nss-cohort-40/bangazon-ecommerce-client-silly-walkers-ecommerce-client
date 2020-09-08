@@ -52,8 +52,9 @@ const Account = () => {
                     <h2>Payment Options: </h2>
                     <ol>
                             {paymentTypes.map((paymentType) => {
-                                return <div>
-                                    <li><h3 className="ml-4">{paymentType.merchant_name}</h3></li>
+                                console.log(paymentType)
+                                return <div key={paymentType.id}>
+                                    <li><h3 className="ml-4" >{paymentType.merchant_name}</h3></li>
                                     <div className="container d-flex flex-wrap">
                                         <div className="ml-4 col-4">Account Number: {paymentType.account_number}</div>
                                         <div className="ml-4 col-4">Expiration Date: {paymentType.expiration_date}</div>
