@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { Form, Button, FormGroup, Col, Row, Input } from "reactstrap";
 
 const SellProductForm = (props) => {
@@ -28,11 +27,9 @@ const SellProductForm = (props) => {
       quantity: quantity.current.value,
       location: location.current.value,
       product_type_id: product_type.productType,
-      imagePath: { image },
+      imagePath: image,
       customer_id: 1,
     };
-
-    console.log(newProduct);
 
     let token = localStorage.getItem("bangazon_token");
 
@@ -49,11 +46,9 @@ const SellProductForm = (props) => {
         })
           .then((response) => response.json())
           .then(() => {
-            console.log("Added");
-            props.history.push("/");
+            props.history.push('/home');
           })
           .catch((error) => {
-            console.log(error);
           });
   };
 
@@ -186,9 +181,9 @@ const SellProductForm = (props) => {
         </FormGroup>
         <Row>
           <Col sm="12" md={{ size: 6, offset: 3 }}>
-            <Link to="/home"><Button color="success" type="submit">
+            <Button color="success" type="submit">
               Complete
-            </Button></Link>
+            </Button>
           </Col>
         
         </Row>

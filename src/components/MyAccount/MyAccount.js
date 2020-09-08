@@ -67,6 +67,7 @@ const Account = () => {
                 <div className="container d-flex flex-wrap">
                     <div className="col-6">
                     <h2 className="text-center">Payment Options: </h2>
+                    {}
                     <ol>
                             {paymentTypes.map((paymentType) => {
                                 return <div key={paymentType.id}>
@@ -85,7 +86,6 @@ const Account = () => {
                         <h2 className="text-center">Order History:</h2>
                         <ol>
                         {orderList.map((order) => {
-                                console.log("this is the order list", order)
                                 return <div key={order.id}>
                                     <li><p className="ml-4" >Orders Listed Here</p></li> 
                                 </div>

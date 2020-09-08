@@ -11,6 +11,7 @@ import {
 } from "reactstrap";
 import "./ProductCard.css";
 
+
 const CartProductCard = (props) => {
   return (
     <Card className="style-card card">

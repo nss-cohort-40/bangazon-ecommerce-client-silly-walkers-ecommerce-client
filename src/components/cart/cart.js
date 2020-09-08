@@ -30,14 +30,14 @@ const Cart = (props) => {
   useEffect(() => {
     getCartList();
   }, []);
-  console.log(orderId);
+
   return (
     <div>
     <div className="row">
       <Container>
         <CardDeck>
-          {cartList.map((product) => (
-            <CartProductCard key={product.id} product={product} {...props} />
+          {cartList.map((product, index) => (
+            <CartProductCard key={index} product={product} {...props} />
           ))}
         </CardDeck>
       </Container>
