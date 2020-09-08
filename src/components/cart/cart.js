@@ -30,7 +30,7 @@ const Cart = (props) => {
   useEffect(() => {
     getCartList();
   }, []);
-  console.log(orderId);
+
   return (
     <div>
     <div className="row">
