@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../../helpers/ProductCard";
-import { Row, Col, Container, CardDeck } from "reactstrap";
+import { Container, CardDeck } from "reactstrap";
 
 const HomepageProductList = (props) => {
   const [productInfo, setProductInfo] = useState([]);
@@ -18,7 +18,6 @@ const HomepageProductList = (props) => {
   }, []);
 
   return (
-    <div className="row">
       <Container>
         <CardDeck>
           {productInfo.map((product) => (
@@ -26,7 +25,6 @@ const HomepageProductList = (props) => {
           ))}
         </CardDeck>
       </Container>
-    </div>
   );
 };
 

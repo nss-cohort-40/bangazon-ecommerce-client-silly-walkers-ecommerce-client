@@ -1,14 +1,14 @@
-// import { Route } from "react-router-dom"
+import { Route, withRouter  } from "react-router-dom";
 import React from "react";
-import { withRouter, Route } from "react-router-dom";
+import Register from "./auth/Register"
+import Login from "./auth/Login"
 import HomepageProductList from "./home/Homepage";
-import Register from "./auth/Register";
-import Login from "./auth/Login";
 import SellProductForm from "./sellProduct/sellProduct";
+import ShowAccount from "./MyAccount/MyAccount";
 import Cart from "./cart/cart";
 import ProductDetail from "./productDetails/productDetails";
 
-const ApplicationViews = () => {
+const ApplicationViews = (props) => {
   return (
     <React.Fragment>
       <Route
@@ -42,6 +42,15 @@ const ApplicationViews = () => {
           );
         }}
       />
+      <Route
+        path="/login"
+        render={(props) => <Login {...props} />} /> 
+      <Route
+        path="/register"
+        render={(props) => <Register {...props} />} /> 
+      <Route
+        exact path="/myaccount"
+        render={(props) => <ShowAccount  {...props} />} />
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/register" render={(props) => <Register {...props} />} />
       <Route path="/products/cart" render={(props) => <Cart {...props} />} />

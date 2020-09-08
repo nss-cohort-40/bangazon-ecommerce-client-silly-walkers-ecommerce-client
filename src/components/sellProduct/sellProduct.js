@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Form, Button, FormGroup, Col, Row, Input } from "reactstrap";
 
 const SellProductForm = (props) => {
@@ -185,15 +186,11 @@ const SellProductForm = (props) => {
         </FormGroup>
         <Row>
           <Col sm="12" md={{ size: 6, offset: 3 }}>
-            <Button color="success" type="submit">
+            <Link to="/home"><Button color="success" type="submit">
               Complete
-            </Button>
+            </Button></Link>
           </Col>
-          {/* <Col xs="5">
-            <Button color="danger" type="submit">
-              Cancel
-            </Button>
-          </Col> */}
+        
         </Row>
       </Form>
     </main>

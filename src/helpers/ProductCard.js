@@ -1,15 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
+  Button,
   Card,
-  CardImg,
-  CardText,
   CardBody,
+  CardImg,
   CardTitle,
   CardSubtitle,
-  Button,
+  CardText
 } from "reactstrap";
-import "./ProductCard.css";
+import './ProductCard.css';
 
 const ProductCard = (props) => {
   return (
@@ -28,7 +27,7 @@ const ProductCard = (props) => {
        <Button onClick={() =>
             props.history.push(`/products/${props.product.id}`)
           }
-       color="success">Detail</Button>{" "}
+       color="success">Detail</Button>
       </CardBody>
     </Card>
   );
