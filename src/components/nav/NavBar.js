@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
 import { Nav, NavbarBrand, Button } from "reactstrap";
@@ -12,7 +12,7 @@ const NavBar = (props) => {
       <NavbarBrand className="logoText">
         <img
           className="navLogo m-2"
-          src="https://tinyurl.com/moneyman222"
+          src="https://tinyurl.com/moneymakerjoe"
           alt="money logo"
         />
         JoesList
@@ -78,7 +78,7 @@ const NavBar = (props) => {
           <li>
             <img
               className="cart p-1 mr-1"
-              src="https://tinyurl.com/yyw8ctdh"
+              src="https://tinyurl.com/shoppingcart-sh"
               alt="shopping cart"
             />
           </li>

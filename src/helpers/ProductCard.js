@@ -28,7 +28,7 @@ const ProductCard = (props) => {
        <Button onClick={() =>
             props.history.push(`/products/${props.product.id}`)
           }
-       color="success">Detail</Button>{" "}
+       color="success">Detail</Button>
       </CardBody>
     </Card>
   );

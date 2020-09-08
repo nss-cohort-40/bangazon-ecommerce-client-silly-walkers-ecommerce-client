@@ -4,6 +4,22 @@ import React, { useEffect, useState } from 'react';
 const Account = () => {
     const [profile, setProfile] = useState({ user: {} });
     const [paymentTypes, setPaymentTypes] = useState([]);
+    const [orderList, setOrderList] = useState([ {order: { payment_type:{}} } ]);
+
+    const getOrders = () => {
+        fetch("http://localhost:8000/orders", {
+            "method": "GET",
+            "headers": {
+                "Accept": "application/json",
+                "Authorization": `Token ${localStorage.getItem("bangazon_token")}`
+            }
+        })
+        .then(response => response.json())
+        .then((orderList) => {
+            setOrderList(orderList)
+        })
+    }
+    
 
     const getProfiles = () => {
         fetch("http://localhost:8000/customers/profile", {
@@ -36,6 +52,7 @@ const Account = () => {
     useEffect(() => {
         getProfiles();
         getPaymentTypes();
+        getOrders();
     }, []);
 
     return (
@@ -49,10 +66,9 @@ const Account = () => {
                 </div>
                 <div className="container d-flex flex-wrap">
                     <div className="col-6">
-                    <h2>Payment Options: </h2>
+                    <h2 className="text-center">Payment Options: </h2>
                     <ol>
                             {paymentTypes.map((paymentType) => {
-                                console.log(paymentType)
                                 return <div key={paymentType.id}>
                                     <li><h3 className="ml-4" >{paymentType.merchant_name}</h3></li>
                                     <div className="container d-flex flex-wrap">
@@ -63,10 +79,20 @@ const Account = () => {
                             })
                         }
                         </ol>
+                        <div className="text-center"><button className="btn btn-success">Add Payment</button></div>
                     </div>
-                    <div className="col-6">
-                        <h2>This is the second 1/2 of the screen</h2>
-                    </div>
+                    {/* <div className="col-6">
+                        <h2 className="text-center">Order History:</h2>
+                        <ol>
+                        {orderList.map((order) => {
+                                console.log("this is the order list", order)
+                                return <div key={order.id}>
+                                    <li><p className="ml-4" >Orders Listed Here</p></li> 
+                                </div>
+                            })
+                        }
+                        </ol>
+                    </div> */}
                 </div>          
             </main>
         );
