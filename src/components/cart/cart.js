@@ -32,6 +32,7 @@ const Cart = (props) => {
   }, []);
   console.log(orderId);
   return (
+    <div>
     <div className="row">
       <Container>
         <CardDeck>
@@ -40,7 +41,10 @@ const Cart = (props) => {
           ))}
         </CardDeck>
       </Container>
-      <Button color="danger">Cancel Order</Button>
+    </div>
+    <div className="text-center p-5">
+    <Button color="danger">Cancel Order</Button>
+    </div>
     </div>
   );
 };

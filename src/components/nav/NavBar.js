@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
 import { Nav, NavbarBrand, Button } from "reactstrap";
 import "./NavBar.css";
@@ -76,11 +76,13 @@ const NavBar = (props) => {
         )}
         {isAuthenticated() ? (
           <li>
+            <Link to="/products/cart">
             <img
               className="cart p-1 mr-1"
               src="https://tinyurl.com/shoppingcart-sh"
               alt="shopping cart"
             />
+            </Link>
           </li>
         ) : (
           ""
