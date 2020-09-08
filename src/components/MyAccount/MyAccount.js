@@ -62,7 +62,7 @@ const Account = () => {
                     <h2>{profile.user.first_name} {profile.user.last_name}</h2>
                     <p><strong>Phone Number: </strong>{profile.phone_number}</p>
                     <p><strong>Address: </strong>{profile.address}</p>
-                    <button className="btn btn-success">Edit</button>          
+                    {/* <button className="btn btn-success">Edit</button>           */}
                 </div>
                 <div className="container d-flex flex-wrap">
                     <div className="col-6">
@@ -79,7 +79,7 @@ const Account = () => {
                             })
                         }
                         </ol>
-                        <div className="text-center"><button className="btn btn-success">Add Payment</button></div>
+                        {/* <div className="text-center"><button className="btn btn-success">Add Payment</button></div> */}
                     </div>
                     {/* <div className="col-6">
                         <h2 className="text-center">Order History:</h2>
