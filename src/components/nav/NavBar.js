@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth";
 import { Nav, NavbarBrand, Button } from "reactstrap";
 import "./NavBar.css";
+import money from '../../images/money.png';
+import cart from '../../images/shopping-cart.png';
 
 const NavBar = (props) => {
   const { isAuthenticated, logout } = useSimpleAuth();
@@ -12,8 +14,8 @@ const NavBar = (props) => {
       <NavbarBrand className="logoText">
         <img
           className="navLogo m-2"
-          src="https://tinyurl.com/moneymakerjoe"
-          alt="money logo"
+          src={money}
+          alt='money hand'
         />
         JoesList
       </NavbarBrand>
@@ -79,7 +81,7 @@ const NavBar = (props) => {
             <Link to="/products/cart">
             <img
               className="cart p-1 mr-1"
-              src="https://tinyurl.com/shoppingcart-sh"
+              src={cart}
               alt="shopping cart"
             />
             </Link>

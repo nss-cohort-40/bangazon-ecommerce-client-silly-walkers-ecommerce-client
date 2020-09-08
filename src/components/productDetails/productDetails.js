@@ -12,11 +12,9 @@ import "./productDetails.css";
 
 const ProductDetails = (props) => {
   const [productDetails, setProductDetails] = useState({ product_type: {} });
-  // console.log('This is my thing', props)
   const pid = props.productId;
 
   const getProductDetails = (props) => {
-    console.log("this is thwhat is an aiask;dgf", props);
     fetch(`http://localhost:8000/products/${pid}`, {
       method: "GET",
       headers: {
@@ -70,7 +68,7 @@ const ProductDetails = (props) => {
             }}
           >
             Add to Cart
-          </Button>{" "}
+          </Button>
         </CardBody>
       </Card>
     </>

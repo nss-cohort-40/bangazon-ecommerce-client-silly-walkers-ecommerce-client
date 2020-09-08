@@ -36,8 +36,8 @@ const Cart = (props) => {
     <div className="row">
       <Container>
         <CardDeck>
-          {cartList.map((product) => (
-            <CartProductCard key={product.id} product={product} {...props} />
+          {cartList.map((product, index) => (
+            <CartProductCard key={index} product={product} {...props} />
           ))}
         </CardDeck>
       </Container>
